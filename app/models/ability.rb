@@ -10,7 +10,9 @@ class Ability
     
     if user.id == 1
       can :manage, :all
-     end
+    else
+      can :create, User
+    
     
     if user.present?
       can :read, User, :id => user.id
