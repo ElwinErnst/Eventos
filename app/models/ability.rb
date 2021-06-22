@@ -7,7 +7,11 @@ class Ability
     # Define abilities for the passed in user here. For example:
     
     user ||= User.new # guest user (not logged in)
-
+    
+    if user.id == 1
+      can :manage, :all
+     end
+    
     if user.present?
       can :read, User, :id => user.id
       can :update, User, :id => user.id
